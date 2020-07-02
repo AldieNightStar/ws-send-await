@@ -15,8 +15,8 @@ const { addSendAwait } = require("ws-send-await");
 addSendAwait(ws);
 
 // WebSockets
-ws.on("message", msg => {
-	let response = ws.sendAwait("How old are you?");
+ws.on("message", async msg => {
+	let response = await ws.sendAwait("How old are you?");
 	console.log(response); // response - string
 });
 ```
